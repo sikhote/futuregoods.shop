@@ -1,17 +1,31 @@
-import { Archivo } from "next/font/google";
-import "./globals.css";
+import '@mantine/core/styles.layer.css';
+import getMetadata from 'lib/getMetadata';
+import { Analytics } from '@vercel/analytics/react';
+import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { theme } from 'lib/theme';
+import App from 'components/App';
 
-const sans = Archivo({ subsets: ["latin"], variable: "--font-sans" });
+export const metadata = getMetadata();
 
-export const metadata = {
-  title: "future goods",
-  description: "we present the best enduring items",
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className={sans.className}>{children}</body>
+      <head>
+        <ColorSchemeScript />
+      </head>
+      <body>
+        <MantineProvider theme={theme} defaultColorScheme="dark">
+          <App>{children}</App>
+        </MantineProvider>
+        <Analytics />
+      </body>
     </html>
   );
 }

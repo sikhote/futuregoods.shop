@@ -1,0 +1,49 @@
+.headerGroup {
+  height: 100%;
+  padding: 0 var(--mantine-spacing-md);
+  max-width: var(--mantine-breakpoint-xl);
+  margin: 0 auto;
+}
+
+.title {
+  color: var(--mantine-color-text);
+  text-decoration: none;
+
+  @include active {
+    @include active-underline;
+  }
+}
+
+.titleInner {
+  font-size: var(--mantine-h1-font-size);
+  line-height: var(--mantine-h1-line-height);
+  font-weight: var(--mantine-h1-font-weight);
+
+  @include smaller-than($mantine-breakpoint-sm) {
+    font-size: calc(var(--mantine-h1-font-size) - .5rem);
+  }
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.li {
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+}
+
+.link {
+  border-radius: var(--mantine-radius-md);
+  font-weight: 500;
+
+  @include active {
+    @include active-underline;
+  }
+}
+
+.main {
+  max-width: var(--mantine-breakpoint-xl);
+  margin: 0 auto;
+}

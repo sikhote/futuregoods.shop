@@ -1,20 +1,35 @@
 {
   "name": "futuregoods.shop",
-  "version": "0.1.0",
+  "description": "the best enduring items",
+  "author": "David Sinclair <david@sinclair.tech> (https://sinclair.tech)",
+  "homepage": "https://futuregoods.shop",
+  "version": "12.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "stylelint '**/*.scss' && next lint && prettier --check .",
+    "fix": "stylelint '**/*.scss' --fix && next lint --fix && prettier --write ."
   },
   "dependencies": {
+    "@mantine/core": "^7",
+    "@mantine/hooks": "^7",
+    "@vercel/analytics": "^1",
+    "classnames": "^2",
+    "date-fns": "^2",
+    "lodash": "^4",
+    "next": "^14",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "sass": "^1"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "^14",
+    "eslint-config-prettier": "^9",
+    "prettier": "^2",
+    "stylelint": "^15",
+    "stylelint-config-standard-scss": "^11"
   }
 }
